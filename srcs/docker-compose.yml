@@ -1,0 +1,56 @@
+version: "3"
+
+services:                   # precise les differentes images a utiliser
+ nginx:
+  image: nginx:mytag
+  build:
+    context: requirements/nginx
+    dockerfile: Dockerfile
+  env_file: .env
+  container_name: nginx
+  ports:
+   - "443:443"
+  restart: always
+ mariadb:
+  image: mariadb:mytag
+  build:
+   context: requirements/mariadb
+   dockerfile: Dockerfile
+   args:
+     DB_NAME: ${DB_NAME}
+     DB_USER: ${DB_USER}
+     DB_PASS: ${DB_PASS}
+     DB_ROOT: ${DB_ROOT}
+  container_name: mariadb
+  env_file: .env
+  ports:
+   - "3306:3306"
+  restart: always
+ wordpress:
+  image: wordpress:mytag
+  build:
+    context: requirements/wordpress
+    dockerfile: Dockerfile
+    args:
+     DB_NAME: ${DB_NAME}
+     DB_USER: ${DB_USER}
+     DB_PASS: ${DB_PASS}
+     DB_ROOT: ${DB_ROOT}
+  env_file: .env
+  container_name: wordpress
+  depends_on:
+   - mariadb
+  restart: always
+  volumes:
+   - wp-volume:/var/www/
+
+volumes:
+  wp-volume:
+   driver_opts:
+    o: bind
+    type: none
+    device: /home/${USER}/data/mariadb
+
+networks:
+ inception:
+  driver: bridge 
