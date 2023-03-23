@@ -26,4 +26,3 @@ USER mysql
 
 CMD [ "/usr/bin/mysqld", "--skip-log-error" ]
 
-

@@ -20,8 +20,8 @@ clean:
 	docker system prune -af || true
 
 fclean: clean
-	docker network rm $$(docker network ls -q) 2>/dev/null | true
-	docker volume rm -f $$(docker volume ls -q)
+	docker network rm $$(docker network ls -q) 2>/dev/null || true
+	docker volume rm -f $$(docker volume ls -q) || true
 	docker volume prune -f || true
 	sudo rm -rf /home/ychibani/data/mariadb
 	sudo rm -rf /home/ychibani/data/wordpress
