@@ -18,8 +18,6 @@ RUN mkdir /var/run/mysqld; \
 
 RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql
 
-EXPOSE 3306
-
 COPY ./tools/database_script.sh .
 
 RUN sh database_script.sh && rm -rf database_script.sh
