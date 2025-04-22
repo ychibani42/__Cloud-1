@@ -1,8 +1,10 @@
+include .env
+
 all:
-	mkdir -p /home/ychibani/data/mariadb
-	mkdir -p /home/ychibani/data/wordpress
-	sudo chmod 777 /home/ychibani/data/wordpress
-	sudo chmod 777 /home/ychibani/data/mariadb
+	mkdir -p /home/${USER}/data/mariadb
+	mkdir -p /home/${USER}/data/wordpress
+	sudo chmod 777 /home/${USER}/data/wordpress
+	sudo chmod 777 /home/${USER}/data/mariadb
 	docker compose -f ./srcs/docker-compose.yml build
 	docker compose -f ./srcs/docker-compose.yml up -d 
 
@@ -23,8 +25,8 @@ fclean: clean
 	docker network rm $$(docker network ls -q) 2>/dev/null || true
 	docker volume rm -f $$(docker volume ls -q) || true
 	docker volume prune -f || true
-	sudo rm -rf /home/ychibani/data/mariadb
-	sudo rm -rf /home/ychibani/data/wordpress
+	sudo rm -rf /home/${USER}/data/mariadb
+	sudo rm -rf /home/${USER}/data/wordpress
 
 re : fclean all
 

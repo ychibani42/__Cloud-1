@@ -17,6 +17,8 @@ services:                   # precise les differentes images a utiliser
   restart: always
   depends_on:
    - wordpress
+
+
  mariadb:
   image: mariadb:mytag
   build:
@@ -34,6 +36,8 @@ services:                   # precise les differentes images a utiliser
   restart: always
   volumes:
    - db-volume:/var/lib/mysql
+
+
  wordpress:
   image: wordpress:mytag
   build:

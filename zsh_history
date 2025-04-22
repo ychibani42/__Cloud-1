@@ -1,0 +1,29 @@
+: 1745328288:0;aws ec2 help
+: 1745328450:0;aws --profile
+: 1745328455:0;aws --profile ychibani42
+: 1745328459:0;aws --profile 
+: 1745328467:0;aws --profile help
+: 1745328493:0;aws s3 ls
+: 1745328746:0;uname -m
+: 1745329240:0;aws configure
+: 1745329397:0;aws ec2 ls
+: 1745329407:0;cat ~/.aws/credentials
+: 1745329431:0;vim ~/.aws/credentials
+: 1745329445:0;aws ec2 ls
+: 1745329458:0;aws s3 ls
+: 1745329677:0;aws ec2 ls
+: 1745329754:0;ls
+: 1745329898:0;cat ychibani-rsa.pem
+: 1745329963:0;ssh -i ./ychibani-rsa.pem i-0a7a00c7c238c149d@172.31.18.106
+: 1745330074:0;ssh -i ./ychibani-rsa.pem ychibani42 cloud-1@172.31.18.106
+: 1745330087:0;ssh -i ./ychibani-rsa.pem i-0a7a00c7c238c149d@172.31.18.106
+: 1745330278:0;ssh -i ./ychibani-rsa.pem "ychibani42 cloud-1@172.31.18.106"
+: 1745330322:0;ssh -i "ychibani-rsa.pem" ec2-user@ec2-56-228-11-98.eu-north-1.compute.amazonaws.com
+: 1745330371:0;chmod 400 ychibani-rsa.pem
+: 1745330372:0;ssh -i "ychibani-rsa.pem" ec2-user@ec2-56-228-11-98.eu-north-1.compute.amazonaws.com
+: 1745333083:0;cat ~/.bash_history
+: 1745333095:0;vim ~/.zsh_history
+: 1745333127:0;ls
+: 1745333136:0;touch zsh_history
+: 1745333149:0;cat ~/.bash_history
+: 1745333154:0;cat ~/.zsh_history
