@@ -1,0 +1,6 @@
+---
+- name: Test Hello Message Playbook
+  hosts: servers 
+  tasks:
+    - name: Ping the server
+      ansible.builtin.ping:
